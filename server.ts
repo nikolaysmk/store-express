@@ -1,14 +1,15 @@
 import express from 'express';
+import prdocut from './data/products.json';
 
-const app:express.Application = express();
-const PORT = 3000
+const app: express.Application = express();
+const PORT: number = 3333;
 
 app.get('/', (req, res) => {
-    res.send('Hello World!');
-    }
-);
+  res.json(prdocut);
 
-app.listen(3000, () => {
-    console.log(`Server is listening on port ${PORT}`);
-    }
-);
+  res.end();
+});
+
+app.listen(PORT, () => {
+  console.log(`Server is listening on port ${PORT}`);
+});
